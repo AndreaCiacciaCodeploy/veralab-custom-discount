@@ -1,0 +1,23 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+    }
+    buyerIdentity {
+      email
+    }
+  }
+  localization {
+    country {
+      isoCode
+    }
+    market {
+      id
+      handle
+    }
+    language {
+      isoCode
+    }
+  }
+}

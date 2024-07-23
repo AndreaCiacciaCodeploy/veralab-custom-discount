@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "78026d4f95436564296a4c907f69d56b"
+name = "custom-veralab-discount"
+handle = "custom-veralab-discount"
+application_url = "https://conscious-wright-custody-containers.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "test-gdl-customer-api.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_discounts,write_products"
+
+[auth]
+redirect_urls = [
+  "https://conscious-wright-custody-containers.trycloudflare.com/auth/callback",
+  "https://conscious-wright-custody-containers.trycloudflare.com/auth/shopify/callback",
+  "https://conscious-wright-custody-containers.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
